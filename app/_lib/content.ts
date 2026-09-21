@@ -57,12 +57,12 @@ const quote = (text: string): JSONContent => ({ type: "blockquote", content: [p(
 
 export const seed: Content = {
   settings: {
-    ip: "play.caelumsmp.net",
+    ip: "play.caelumsmp.com",
     version: "Java 1.21+",
     season: 3,
     maxPlayers: 100,
     discordInvite: "https://discord.gg/caelumsmp",
-    storeUrl: "https://store.caelumsmp.net",
+    storeUrl: "https://store.caelumsmp.com",
     status: { source: "demo", online: 42, discord: 1284 },
     hero: {
       lines: ["Build.", "Survive.", "Belong."],

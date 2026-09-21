@@ -146,7 +146,7 @@ export const guides: Guide[] = [
             symptom: "\"Connection timed out: no further information\"",
             looks: { alt: "Connection timed out screen", mock: { kind: "screen", lines: ["Failed to connect to the server", "Connection timed out: no further information"] } },
             cause: "The player can't reach the server at all. Usually a typo in the IP, their network, or the server is restarting.",
-            fix: ["Check the IP is exactly play.caelumsmp.net (no https://, no port).", "Check #status on Discord for a restart or outage.", "Ask them to try a phone hotspot. If that works, it's their network or firewall.", "School and work networks often block Minecraft. Nothing we can do there."],
+            fix: ["Check the IP is exactly play.caelumsmp.com (no https://, no port).", "Check #status on Discord for a restart or outage.", "Ask them to try a phone hotspot. If that works, it's their network or firewall.", "School and work networks often block Minecraft. Nothing we can do there."],
             escalate: "More than 3 players reporting it at once: ping an Admin, the server may be down.",
           },
           {

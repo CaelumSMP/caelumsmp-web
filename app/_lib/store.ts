@@ -11,12 +11,24 @@ export const UPLOADS = path.join(DIR, "uploads");
 
 // Missing sections fall back to the seed, so adding a new section later needs no migration.
 // Actions use readContent (always fresh); pages use getContent (read once per request).
+// In dev the store runs on :3001; point at it rather than production so the
+// Store button doesn't leave localhost. Override with NEXT_PUBLIC_STORE_URL.
+const STORE_URL_OVERRIDE =
+  process.env.NEXT_PUBLIC_STORE_URL ??
+  (process.env.NODE_ENV === "development" ? "http://localhost:3001" : undefined);
+
 export async function readContent(): Promise<Content> {
   try {
     const saved = JSON.parse(await fs.readFile(FILE, "utf8")) as Partial<Content>;
-    return structuredClone({ ...seed, ...saved, settings: { ...seed.settings, ...saved.settings } });
+    const merged = structuredClone({ ...seed, ...saved, settings: { ...seed.settings, ...saved.settings } });
+    if (STORE_URL_OVERRIDE) merged.settings.storeUrl = STORE_URL_OVERRIDE;
+    return merged;
   } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return structuredClone(seed); // a copy: callers mutate it
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") {
+      const fresh = structuredClone(seed); // a copy: callers mutate it
+      if (STORE_URL_OVERRIDE) fresh.settings.storeUrl = STORE_URL_OVERRIDE;
+      return fresh;
+    }
     throw e;
   }
 }
