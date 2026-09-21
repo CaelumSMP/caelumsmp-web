@@ -1,0 +1,524 @@
+/* Guides tab: index, known issues, reader. Tokens from aurora.module.css `.page`. */
+
+.home {
+  display: grid;
+  gap: 22px;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.search input:not([type="hidden"]) {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  background: #04131c;
+  color: var(--text);
+  font: 400 16px/1.4 var(--body);
+}
+
+.search input:focus-visible {
+  border-color: var(--lime);
+  outline: none;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: var(--card);
+  border-bottom: 4px solid var(--c, var(--text));
+  font: 700 13px/1 var(--body);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.chips a:hover {
+  background: #10304a;
+}
+
+.chips a[aria-current] {
+  background: var(--c, var(--text));
+  color: #04131c;
+}
+
+.chips b {
+  padding: 2px 6px;
+  background: rgba(4, 19, 28, 0.6);
+  color: var(--text);
+  font-size: 11px;
+}
+
+.label {
+  margin-bottom: 12px !important;
+  font: 700 12px/1 var(--body) !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.empty {
+  color: var(--dim);
+}
+
+.empty a,
+.outdated a {
+  color: var(--cyan);
+  border-bottom: 2px solid currentColor;
+}
+
+/* guide cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 18px;
+}
+
+.cards a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 22px !important;
+  transition: transform 0.15s;
+}
+
+.cards a:hover,
+.cards a:focus-visible {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+
+.cards h3 {
+  font-size: 17px !important;
+}
+
+.cards p {
+  color: #dfe6ff;
+  font-size: 15px;
+}
+
+.cards small {
+  margin-top: auto;
+  color: var(--dim);
+  font-weight: 700;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* known issues index */
+.issueIndex {
+  display: grid;
+  gap: 8px;
+}
+
+.issueIndex a {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--card);
+  border-left: 6px solid var(--coral);
+  clip-path: var(--notch);
+}
+
+.issueIndex a:hover {
+  background: #10304a;
+}
+
+.issueIndex b {
+  font-size: 16px;
+}
+
+.issueIndex small {
+  color: var(--dim);
+  font-size: 14px;
+}
+
+.issueIndex em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--cyan);
+  white-space: nowrap;
+}
+
+.if {
+  font: 700 11px/1 var(--body);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+/* ---------- reader ---------- */
+.back {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.head {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  max-width: 760px;
+  padding-bottom: 22px;
+  margin-bottom: 26px;
+  border-bottom: 3px solid var(--c);
+}
+
+.head h2 {
+  font: 400 clamp(26px, 4vw, 46px) / 1 var(--display);
+  text-transform: uppercase;
+  text-shadow: 5px 5px 0 rgba(4, 19, 28, 0.8);
+}
+
+.head p {
+  font-size: 18px;
+  color: #dfe6ff;
+}
+
+.head small {
+  color: var(--dim);
+  font-weight: 700;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) minmax(0, 260px);
+  gap: 40px;
+  align-items: start;
+}
+
+.body {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.h {
+  margin-top: 14px !important;
+  font: 400 20px/1.2 var(--display) !important;
+  color: var(--c);
+  scroll-margin-top: 80px;
+}
+
+.text {
+  color: #dfe6ff;
+}
+
+.toc {
+  position: sticky;
+  top: 80px;
+  padding: 16px;
+  background: var(--card);
+  clip-path: var(--notch);
+}
+
+.toc h3 {
+  margin-bottom: 10px !important;
+  font: 700 11px/1 var(--body) !important;
+  letter-spacing: 1.5px;
+  color: var(--dim);
+}
+
+.toc ol {
+  display: grid;
+  gap: 2px;
+}
+
+.toc a {
+  display: block;
+  padding: 6px 8px;
+  border-left: 3px solid var(--c);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.toc li[data-issue] a {
+  margin-left: 10px;
+  border-color: var(--coral);
+  font-weight: 400;
+  color: #dfe6ff;
+}
+
+.toc a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* callouts */
+.callout {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--c) 12%, var(--card));
+  border-left: 8px solid var(--c);
+  clip-path: var(--notch);
+}
+
+.callout b {
+  flex: none;
+  font: 400 12px/1.8 var(--display);
+  text-transform: uppercase;
+  color: var(--c);
+}
+
+/* steps */
+.steps {
+  display: grid;
+  gap: 14px;
+}
+
+.steps > li {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--c);
+  color: #04131c;
+  font: 400 18px/1 var(--display);
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.steps > li > div {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.cmd {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  padding: 8px 8px 8px 12px;
+  border: 0;
+  background: #04131c;
+  color: var(--lime);
+  cursor: pointer;
+  text-align: left;
+  font: 700 14px/1.4 ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+.cmd code {
+  font: inherit;
+  overflow-wrap: anywhere;
+}
+
+.cmd span {
+  flex: none;
+  padding: 4px 7px;
+  background: var(--card);
+  color: var(--dim);
+  font: 700 11px/1 var(--body);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cmd:hover span {
+  background: var(--lime);
+  color: #04131c;
+}
+
+/* screenshots */
+.shot {
+  width: 100%;
+  margin: 0;
+}
+
+.shot img {
+  width: 100%;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+}
+
+.shot figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.missing {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  padding: 16px;
+  border: 3px dashed rgba(255, 255, 255, 0.2);
+  color: var(--dim);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Minecraft-ish stand-ins until real screenshots exist */
+.mock {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  font: 700 14px/1.35 ui-monospace, "Cascadia Mono", Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+.mock[data-kind="chat"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), linear-gradient(160deg, #3f7a3a, #6fa3d6);
+  color: #fff;
+  text-shadow: 2px 2px 0 #3f3f3f;
+}
+
+.mock[data-kind="console"] {
+  background: #0b0b0b;
+  color: #b8f5b0;
+}
+
+/* the dirt-background disconnect screen */
+.mock[data-kind="screen"] {
+  justify-items: center;
+  gap: 10px;
+  padding: 34px 16px 26px;
+  text-align: center;
+  background-color: #3b2a1c;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    repeating-conic-gradient(#5b4030 0 25%, #4a3324 0 50%);
+  background-size: auto, 24px 24px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #3f3f3f;
+}
+
+.mock[data-kind="screen"] span:first-child {
+  color: #a0a0a0;
+}
+
+.mock[data-kind="screen"] i {
+  margin-top: 12px;
+  padding: 8px 40px;
+  background: #6f6f6f;
+  border: 2px solid #000;
+  box-shadow: inset 2px 2px 0 #aaa, inset -2px -2px 0 #555;
+  font-style: normal;
+}
+
+/* troubleshooting */
+.issues {
+  display: grid;
+  gap: 14px;
+}
+
+.issue {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  background: var(--card);
+  border-top: 6px solid var(--coral);
+  clip-path: var(--notch);
+  scroll-margin-top: 80px;
+}
+
+.issue:target {
+  outline: 3px solid var(--lime);
+  outline-offset: -3px;
+}
+
+.issue h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.issue dl {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 10px 14px;
+  margin: 0;
+}
+
+.issue dt {
+  font: 700 11px/1.9 var(--body);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.issue dd {
+  margin: 0;
+  color: #dfe6ff;
+}
+
+.issue dd ol {
+  display: grid;
+  gap: 6px;
+  padding-left: 20px !important;
+  list-style: decimal !important;
+}
+
+.issue dd li::marker {
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.escalate {
+  padding: 10px 12px;
+  background: rgba(167, 123, 255, 0.14);
+  border-left: 4px solid var(--violet);
+  font-size: 15px;
+}
+
+.escalate b {
+  color: var(--violet);
+}
+
+.outdated {
+  margin-top: 10px !important;
+  padding-top: 16px;
+  border-top: 2px solid rgba(255, 255, 255, 0.08);
+  color: var(--dim);
+  font-size: 15px;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .toc {
+    position: static;
+    order: -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .search {
+    flex-direction: column;
+  }
+  .steps > li {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .num {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+  .issue dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}

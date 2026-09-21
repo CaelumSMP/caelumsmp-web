@@ -1,0 +1,9 @@
+- i don't know if all the things should be moved but parts of the navbar items should be separate pages, like leaderboards and profiles should be detailed i could click user and get his info etc
+- i like the layout but i would like inside the staff dashboard to have owner part for editing values on the frontend page from minecraft ip, text, icons, creating and editing blogpost, event time 
+- Improve the House Rules animation when clicking 
+- blogpost should be maybe either one below another with thumbnail image so users distinguish and recognize blogpost on the frontend page
+- online in the corner should showcase separately players online and in discord and have button for each (discord invite while server copy ip)
+- add store buttons and vote page as well
+- i like the blogpost feature i just need a full preview editor, at a glance and support for fully editing the post from positioning image, colroed text and full editor
+- either separate page for teams or maybe modal opening for each member, in admin dashboard i would like to have option to edit values for these as well
+- if i missed anything feel free to remind me or add yourself to make this fully work
