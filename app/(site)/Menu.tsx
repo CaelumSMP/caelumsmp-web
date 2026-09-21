@@ -32,7 +32,7 @@ export default function Menu({ ip, storeUrl, socials, links }: { ip: string; sto
         </ol>
         <div className={s.menuFoot}>
           <CopyIp ip={ip} className={s.btn} />
-          <a href={storeUrl} className={s.btn} target="_blank" rel="noopener noreferrer">
+          <a href={storeUrl} className={s.btn}>
             Store
           </a>
           <ul>

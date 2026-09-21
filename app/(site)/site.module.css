@@ -709,6 +709,13 @@
   text-shadow: 6px 6px 0 rgba(4, 19, 28, 0.55);
 }
 
+/* .pageHead is capped at 1040px, so a wider viewport never buys the title more
+   room — at 72px "LEADERBOARDS" needs 734px in a 612px column and runs under
+   the search. Only headers that actually carry a search need the smaller cap;
+   News, Team and Rules keep the full-size title. */
+.pageHead:has(.search) h1 {
+  font-size: clamp(30px, 4.2vw, 52px);
+}
 .pageHead p {
   margin-top: 10px !important;
   max-width: 60ch;
@@ -721,7 +728,12 @@
   color: var(--lime);
 }
 
-@media (max-width: 820px) {
+/* The title column is minmax(0, 1fr), so it shrinks below its content — but a
+   page title is one long word that won't wrap, so it overflowed under the 320px
+   search box. The breakpoint has to clear the widest title: "LEADERBOARDS" is
+   ~650px at the 72px cap, plus a 64px icon, 48px of gaps, the 320px search and
+   the page gutters. Below this, the search gets its own row. */
+@media (max-width: 1200px) {
   .pageHead {
     grid-template-columns: auto minmax(0, 1fr);
   }

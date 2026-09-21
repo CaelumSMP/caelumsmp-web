@@ -61,7 +61,7 @@ export default async function Vote() {
             ))}
           </ul>
           <p className={x.muted}>Vote on at least one site every day to keep a streak. Miss a day and it starts again.</p>
-          <a href={settings.storeUrl} className={s.textLink} target="_blank" rel="noopener noreferrer">
+          <a href={settings.storeUrl} className={s.textLink}>
             Want to support the server another way? Visit the store →
           </a>
         </section>

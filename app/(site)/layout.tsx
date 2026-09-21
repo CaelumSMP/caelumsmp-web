@@ -49,7 +49,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
           </span>
         </div>
 
-        <a href={settings.storeUrl} className={x.store} target="_blank" rel="noopener noreferrer">
+        <a href={settings.storeUrl} className={x.store}>
           <Icon name="chest" size={16} />
           Store
         </a>
@@ -84,9 +84,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
               </li>
             ))}
             <li>
-              <a href={settings.storeUrl} target="_blank" rel="noopener noreferrer">
-                Store
-              </a>
+              <a href={settings.storeUrl}>Store</a>
             </li>
             <li>
               <Link href="/staff">Staff</Link>
